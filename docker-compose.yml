@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - .:/app
+    command: >
+      sh -c "python simulate_load.py && streamlit run dashboard.py --server.port 8501 --server.address 0.0.0.0"
