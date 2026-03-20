@@ -2,7 +2,7 @@
 
 This portfolio project provides a complete monitoring and observability solution for Large Language Model (LLM) applications. It is designed to capture, record, analyze, and visualize critical metrics such as token usage, cost, latency, error rates, and output quality – the foundational pillars of effective LLMOps.
 
-## 🚀 Features
+##  Features
 
 - **LLM API Interception**: A robust Python wrapper (`LLMCallWrapper`) that intercepts LLM generations to gather token usage, model choices, and network latency.
 - **Cost Calculation Engine**: Reconciles varying model pricing dynamics to compute the exact cost of each LLM transaction instantly.
@@ -15,7 +15,7 @@ This portfolio project provides a complete monitoring and observability solution
 - **Alerting Mechanisms**: Actively monitors error rates utilizing a sliding window pattern (over the last 10 requests), firing console alerts automatically if the error rate breaches a predefined 20% limit.
 - **Executive Dashboard**: A comprehensive Streamlit visual interface to parse and visualize Request Volumes, Timings, Costs, Errors, and Quality Flags cleanly.
 
-## 🛠️ Architecture
+##  Architecture
 
 ```
 ├── llm_app.py        # Core generation logic, LLMCallWrapper, Alerting checker.
@@ -29,7 +29,7 @@ This portfolio project provides a complete monitoring and observability solution
 └── .env.example      # Environment variables template.
 ```
 
-## 💻 Setup and Usage Instructions
+##  Setup and Usage Instructions
 
 ### Method 1: Docker (Recommended)
 
@@ -68,16 +68,10 @@ python simulate_load.py
 streamlit run dashboard.py
 ```
 5. View at [http://localhost:8501](http://localhost:8501).
-
+s
 ---
-
-## 🏗️ Design Decisions
+##  Design Decisions
 *   **Decoupled Wrapper:** The `LLMCallWrapper` encapsulates the raw client interaction separately from business logic, ensuring observability is implemented flawlessly without cluttering root endpoints.
 *   **JSON Lines (JSONL) Data Layer:** Optimized structured data persistence format perfectly tailored for append-only streaming mechanisms, universally parseable by data tools unreliant on relational database complexity overheads for a POC.
 *   **Heuristics Engine:** Provides safety checks to shield users from hallucinated/refused outputs by giving engineering teams the flag insight immediately upon ingestion.
 
-## 🤝 Next Steps / Submission Check
-To submit your work:
-1. Ensure all code resides cleanly in the root of the folder.
-2. Select all files and package them securely into a `zip` archive.
-3. Submit the `.zip` archive to complete the objective properly.
